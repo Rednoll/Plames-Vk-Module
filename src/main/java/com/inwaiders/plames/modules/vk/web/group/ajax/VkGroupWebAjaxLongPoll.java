@@ -23,7 +23,7 @@ public class VkGroupWebAjaxLongPoll {
 	@PostMapping("/group/verification")
 	public DeferredResult<ResponseEntity> verification(@RequestBody JsonNode json) {
 		
-		DeferredResult<ResponseEntity> output = new DeferredResult<ResponseEntity>();
+		DeferredResult<ResponseEntity> output = new DeferredResult<ResponseEntity>(3600000L);
 		
 		if(!json.has("groupId") || !json.get("groupId").isNumber()) {
 		
